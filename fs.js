@@ -40,3 +40,10 @@ fs.rename('fs.txt', 'filesystem.txt', function(err) {
     if(err) throw err;
     console.log('file renamed...');
 });
+
+let stream = fs.createReadStream("./data.txt");
+
+stream.on("data", function(data) {
+    let chunk = data.toString();
+    console.log(chunk);
+});
