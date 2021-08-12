@@ -2,7 +2,7 @@ var http = require('http');
 var fs = require('fs');
 
 //fs readfile
-/*http.createServer(function(req, res) {
+http.createServer(function(req, res) {
     fs.readFile('fs.html', function(err, data) {
         res.writeHead(200, {'content-type':'text/html'});
         res.write(data);
@@ -46,7 +46,7 @@ let stream = fs.createReadStream("./data.txt");
 stream.on("data", function(data) {
     let chunk = data.toString();
     console.log(chunk);
-});*/
+});
 
 let Stream = fs.createWriteStream("./empty.txt");
 
