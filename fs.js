@@ -2,7 +2,7 @@ var http = require('http');
 var fs = require('fs');
 
 //fs readfile
-http.createServer(function(req, res) {
+/*http.createServer(function(req, res) {
     fs.readFile('fs.html', function(err, data) {
         res.writeHead(200, {'content-type':'text/html'});
         res.write(data);
@@ -55,4 +55,10 @@ Stream.write("\nis one of the best ")
 Stream.write("\ntools for programmers ")
 Stream.write("\nwhom wanted to write and build ")
 Stream.write("\nfastest servers and applications.")
-Stream.write("\nwrote by midxdle")
+Stream.write("\nwrote by midxdle")*/
+
+//pipes
+let readStream = fs.createReadStream("./dataIn.txt");
+let writeStream = fs.createWriteStream("./dataOut.txt");
+
+readStream.pipe(writeStream);
